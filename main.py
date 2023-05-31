@@ -3,21 +3,25 @@ from turtle import Screen
 import time
 from food import Food
 from scoreboard import ScoreBoard
+# initializing turtle screen
 screen = Screen()
+# setting screen width, color, title
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("SNAKE GAME")
+# turning of turtle animation
 screen.tracer(0)
 game_is_on = True
 snake = Snake()
 food = Food()
 score = ScoreBoard()
+# Keyboard entry listening
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
-
+# snake game loop
 while game_is_on:
     screen.update()
     time.sleep(0.15)
